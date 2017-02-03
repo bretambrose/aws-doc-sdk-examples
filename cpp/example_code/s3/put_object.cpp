@@ -53,15 +53,12 @@ int main(int argc, char** argv)
 
         auto put_object_outcome = s3_client.PutObject(object_request);
 
-        if (put_object_outcome.IsSuccess())
-        {
+        if (put_object_outcome.IsSuccess()) {
             std::cout << "Done!" << std::endl;
-        }
-        else
-        {
+        } else {
             std::cout << "PutObject error: " <<
-            put_object_outcome.GetError().GetExceptionName() << " " <<
-            put_object_outcome.GetError().GetMessage() << std::endl;
+                put_object_outcome.GetError().GetExceptionName() << " " <<
+                put_object_outcome.GetError().GetMessage() << std::endl;
         }
     }
 
